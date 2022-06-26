@@ -2,7 +2,7 @@
 using System.Threading;
 using NETLab3.GameParticipants;
 
-namespace Singleton
+namespace NETLab3
 {
     class Program
     {
