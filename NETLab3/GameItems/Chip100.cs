@@ -15,6 +15,6 @@ namespace NETLab3.GameItems
             Value = 100;
         }
 
-        public override string ToString() => String.Format("[Фiшка {0}од.]", Value);
+        public override string ToString() => string.Format("[Фiшка {0}од.]", Value);
     }
 }

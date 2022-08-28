@@ -10,12 +10,11 @@ namespace NETLab3
         {
             try
             {
-                Console.WriteLine(
-                    "===Розпорядник гри===" +
-                    "\nНалаштуйте, будь ласка, гру" +
-                    "\nКiльiкiсть полiв на дошцi:"
+                Console.WriteLine(@"===Розпорядник гри===
+    Налаштуйте, будь ласка, гру
+    Кiльiкiсть полiв на дошцi:"
                 );
-                int boardsize = TryRead();
+                var boardsize = TryRead();
                 Console.WriteLine("Чудово! Вкажiть тепер кiлькiсть фiшок вагою 10:");
                 int[] chip = new int[3];
                 chip[0] = TryRead();
@@ -24,15 +23,13 @@ namespace NETLab3
                 Console.WriteLine("Тепер кiлькiсть фiшок вагою 100:");
                 chip[2] = TryRead();
 
-                Croupier croupier1 = Croupier.GetInstance(boardsize, chip[0], chip[1], chip[2]);
+                var croupier1 = Croupier.GetInstance(boardsize, chip[0], chip[1], chip[2]);
 
-                Console.WriteLine($"Круп'є готовий роздати дошку з {croupier1.Board.Size}, " +
-                    $"фiшки:");
+                Console.WriteLine($"Круп'є готовий роздати дошку з {croupier1.Board.Size}, фiшки:");
                 foreach(var item in croupier1.Chips)
                 {
                     Console.Write(item + " ");
                 }
-                
             }
             catch(Exception ex)
             {
