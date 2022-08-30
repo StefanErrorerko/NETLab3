@@ -10,9 +10,9 @@ namespace NETLab3
         {
             try
             {
-                Console.WriteLine(@"===Розпорядник гри===
-    Налаштуйте, будь ласка, гру
-    Кiльiкiсть полiв на дошцi:"
+                Console.WriteLine("===Розпорядник гри===\n" + 
+                    "\tНалаштуйте, будь ласка, гру\n" + 
+                    "\tКiльiкiсть полiв на дошцi:"
                 );
                 var boardsize = TryRead();
                 Console.WriteLine("Чудово! Вкажiть тепер кiлькiсть фiшок вагою 10:");
@@ -25,7 +25,7 @@ namespace NETLab3
 
                 var croupier1 = Croupier.GetInstance(boardsize, chip[0], chip[1], chip[2]);
 
-                Console.WriteLine($"Круп'є готовий роздати дошку з {croupier1.Board.Size}, фiшки:");
+                Console.WriteLine($"Круп'є готовий роздати дошку з {croupier1.Board.Size} полями, також фiшки:");
                 foreach(var item in croupier1.Chips)
                 {
                     Console.Write(item + " ");
@@ -40,11 +40,11 @@ namespace NETLab3
 
         static int TryRead()
         {
-            bool flag = false;
+            bool isCorrectInput = false;
             int amount = -1;
-            while (!flag)
+            while (!isCorrectInput)
             {
-                string? value = Console.ReadLine();
+                var value = Console.ReadLine();
                 if (string.IsNullOrEmpty(value))
                 {
                     Console.WriteLine("Ви нiчого не ввели.");
@@ -54,7 +54,7 @@ namespace NETLab3
                     try
                     {
                         amount = Int32.Parse(value);
-                        flag = true;
+                        isCorrectInput = true;
                     }
                     catch
                     {
