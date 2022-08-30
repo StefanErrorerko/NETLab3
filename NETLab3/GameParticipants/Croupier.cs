@@ -5,9 +5,11 @@ namespace NETLab3.GameParticipants
 {
     internal class Croupier
     {
-        public GameBoard Board { get; }
-        public List<Chip> Chips { get; }
         private static Croupier? _instance;
+        
+        public GameBoard Board { get; private set; }
+        public List<Chip> Chips { get; private set; }
+
         private Croupier(int boardSize, int chip10Amount, int chip50Amount, int chip100Amount) 
         {
             Board = new GameBoard(boardSize);
@@ -26,11 +28,7 @@ namespace NETLab3.GameParticipants
             }
 
         }
-        public static Croupier GetInstance(
-            int boardSize, 
-            int chip10Amount, 
-            int chip50Amount, 
-            int chip100Amount)
+        public static Croupier GetInstance(int boardSize,int chip10Amount,int chip50Amount, int chip100Amount)
         {
             if (_instance == null)
             {
