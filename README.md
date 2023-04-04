@@ -1,5 +1,7 @@
 # NETLab3
 
+Lab3 | Design Patterns (породжуючі) | Singleton
+
 Музика Стефан
 ІС-02
 11-й варіант
